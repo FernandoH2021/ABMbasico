@@ -1,0 +1,4 @@
+1 - creamos la clase de la tabla tarea de la base de datos
+2 - creamos la interface para utilizar las funciones crud
+3 - creamos los servicios
+4 - implementamos los servicios
