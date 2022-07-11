@@ -2,3 +2,5 @@
 2 - creamos la interface para utilizar las funciones crud
 3 - creamos los servicios
 4 - implementamos los servicios
+5 - creamos paquete controller
+6 - dentro de controller una clase TareaController
