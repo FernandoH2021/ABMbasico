@@ -18,11 +18,11 @@ public class Tarea {
     @Column(name = "Id")
     private Integer Id;
     
-    @Column(name = "Objetivo")
-    private String Objetivo;
+    @Column(name = "Tarea")
+    private String Tarea;
     
-    @Column(name = "Cumplido")
-    private Boolean Cumplido;
+    @Column(name = "Finalizado")
+    private Boolean Finalizado;
 
     public Integer getId() {
         return Id;
@@ -32,20 +32,20 @@ public class Tarea {
         this.Id = Id;
     }
 
-    public String getObjetivo() {
-        return Objetivo;
+    public String getTarea() {
+        return Tarea;
     }
 
-    public void setObjetivo(String Objetivo) {
-        this.Objetivo = Objetivo;
+    public void setTarea(String Tarea) {
+        this.Tarea = Tarea;
     }
 
-    public Boolean getCumplido() {
-        return Cumplido;
+    public Boolean getFinalizado() {
+        return Finalizado;
     }
 
-    public void setCumplido(Boolean Cumplido) {
-        this.Cumplido = Cumplido;
+    public void setFinalizado(Boolean Finalizado) {
+        this.Finalizado = Finalizado;
     }
     
 }

@@ -7,6 +7,7 @@ import com.abm.proyectoabm.Service.TareaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*") //permite dar acceso de donde se puede conectar
 @RequestMapping("/api") //indica la ruta de acceso
 public class TareaController {
-
+    
     @Autowired //nos permite inyectar dependencias
     //llamamos a nuestro servicio creando una nueva variable:
 
@@ -28,27 +29,27 @@ public class TareaController {
     //listar
     @GetMapping("/tareas")//nos va a indicar para mostrar algo
     public List<Tarea> listar() {
-
+        
         return tareaService.findAll();
-
+        
     }
 
     //guardar
     @PostMapping("/tareas") //tambien designamos una ruta
     //creamos la funcion
     public Tarea guardar(@RequestBody Tarea tarea) {
-
+        
         return tareaService.save(tarea);
-
+        
     }
 
     //get una tarea
     @GetMapping("/tareas/{id}")
     //creamos la funcion
     public Tarea getUnaTarea(@PathVariable Integer id) {
-
+        
         return tareaService.findById(id);
-
+        
     }
 
     //seleccionamos y modificamos
@@ -57,6 +58,16 @@ public class TareaController {
 
         //creamos una nueva tarea
         Tarea tareaActual = tareaService.findById(id);
-
+        tareaActual.setTarea(tarea.getTarea());
+        tareaActual.setFinalizado(tarea.getFinalizado());
+        
+        return tareaService.save(tareaActual);
     }
+
+    //eliminar
+    @DeleteMapping("/tareas/{id}")
+    public void eliminar(@PathVariable Integer id) {
+        tareaService.delete(id);
+    }
+    
 }
