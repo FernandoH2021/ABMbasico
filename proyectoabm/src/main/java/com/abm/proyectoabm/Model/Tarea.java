@@ -10,11 +10,11 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "tarea")
+@Table(name = "Tb_Tarea")
 public class Tarea {
     //creamos los atributos
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //para el auto incrementado
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //para el auto incrementado del id
     @Column(name = "Id")
     private Integer Id;
     
